@@ -40,15 +40,10 @@ class SortedList {
   }
 
   avg() {
-    if (this.items.length === 0) {
+    if (!this.items.length) {
       throw new Error("EmptySortedList");
     }
-    const sum = this.items.reduce(
-      (accumulator, currentValue) => accumulator + currentValue,
-      0
-    );
-    const avg = sum / this.items.length;
-    return avg;
+    return this.sum() / this.items.length;
   }
 }
 
